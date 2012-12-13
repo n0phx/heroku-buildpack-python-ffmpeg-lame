@@ -77,6 +77,15 @@ cd $BUILD_DIR
 # Experimental pre_compile hook.
 source $BIN_DIR/steps/hooks/pre_compile
 
+# Clone the already compiled ffmped binaries from github
+FFMPEG_BINARY="https://github.com/dzello/ffmpeg-heroku.git"
+VENDOR_FOLDER="vendor"
+
+mkdir -p $BUILD_DIR/$VENDOR_FOLDER
+git clone $FFMPEG_BINARY $BUILD_DIR/$VENDOR_FOLDER
+# Just renaming
+mv $BUILD_DIR/$VENDOR_FOLDER/ffmpeg-heroku $BUILD_DIR/$VENDOR_FOLDER/ffmpeg
+
 # ### Sanity Checks
 #
 # Just a little peace of mind.

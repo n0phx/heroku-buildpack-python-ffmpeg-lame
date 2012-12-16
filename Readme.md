@@ -4,11 +4,9 @@ Heroku buildpack: Python-ffmpeg
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for Python apps.
 The only difference from the clean Python buildpack is that this one includes ffmpeg. Currently
 it's not compiled at runtime of the compile script, but a pre-compiled version is simply cloned
-from [GitHub](https://github.com/dzello/ffmpeg-heroku), which was built on heroku also.
+from [dzello's repo](https://github.com/dzello/ffmpeg-heroku), which was built on heroku also.
 
 It uses [virtualenv](http://www.virtualenv.org/) and [pip](http://www.pip-installer.org/).
-
-[![Build Status](https://secure.travis-ci.org/heroku/heroku-buildpack-python.png?branch=master)](http://travis-ci.org/heroku/heroku-buildpack-python)
 
 Usage
 -----

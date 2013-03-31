@@ -49,24 +49,24 @@ Example usage:
            Downloading/unpacking gevent==0.13.8 (from -r requirements.txt (line 2))
              Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fg%2Fgevent%2Fgevent-0.13.8.tar.gz
              Running setup.py egg_info for package gevent
-               
+
            Downloading/unpacking gunicorn==0.14.3 (from -r requirements.txt (line 3))
              Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fg%2Fgunicorn%2Fgunicorn-0.14.3.tar.gz
              Running setup.py egg_info for package gunicorn
-               
+
            Downloading/unpacking greenlet (from gevent==0.13.8->-r requirements.txt (line 2))
              Storing download in cache at /app/tmp/repo.git/.cache/pip_downloads/http%3A%2F%2Fpypi.python.org%2Fpackages%2Fsource%2Fg%2Fgreenlet%2Fgreenlet-0.4.0.zip
              Running setup.py egg_info for package greenlet
-               
+
            Installing collected packages: gevent, gunicorn, greenlet
              Running setup.py install for gevent
                building 'gevent.core' extension
                gcc -pthread -fno-strict-aliasing -g -O2 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/include/python2.7 -c gevent/core.c -o build/temp.linux-x86_64-2.7/gevent/core.o
                gcc -pthread -shared build/temp.linux-x86_64-2.7/gevent/core.o -levent -o build/lib.linux-x86_64-2.7/gevent/core.so
                Linking /tmp/build_3fhn8k1szm2sp/.heroku/venv/build/gevent/build/lib.linux-x86_64-2.7/gevent/core.so to /tmp/build_3fhn8k1szm2sp/.heroku/venv/build/gevent/gevent/core.so
-               
+
              Running setup.py install for gunicorn
-               
+
                Installing gunicorn_paster script to /tmp/build_3fhn8k1szm2sp/.heroku/venv/bin
                Installing gunicorn script to /tmp/build_3fhn8k1szm2sp/.heroku/venv/bin
                Installing gunicorn_django script to /tmp/build_3fhn8k1szm2sp/.heroku/venv/bin
@@ -77,7 +77,7 @@ Example usage:
                greenlet.c:543: warning: 'err' may be used uninitialized in this function
                gcc -pthread -shared build/temp.linux-x86_64-2.7/greenlet.o -o build/lib.linux-x86_64-2.7/greenlet.so
                Linking /tmp/build_3fhn8k1szm2sp/.heroku/venv/build/greenlet/build/lib.linux-x86_64-2.7/greenlet.so to /tmp/build_3fhn8k1szm2sp/.heroku/venv/build/greenlet/greenlet.so
-               
+
            Successfully installed gevent gunicorn greenlet
            Cleaning up...
     -----> Discovering process types
@@ -121,8 +121,3 @@ Hacking
 To use this buildpack, fork it on Github.  Push up changes to your fork, then create a test app with `--buildpack <your-github-url>` and push to it.
 
 To change the vendored virtualenv, unpack the desired version to the `src/` folder, and update the virtualenv() function in `bin/compile` to prepend the virtualenv module directory to the path. The virtualenv release vendors its own versions of pip and setuptools.
-
-TODO
-----
-
-Next step should be to clone the actual ffmpeg sources and compile them on heroku, instead of cloning the pre-compiled binaries.

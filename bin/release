@@ -3,33 +3,23 @@
 
 BIN_DIR=$(cd $(dirname $0); pwd) # absolute path
 BUILD_DIR=$1
-NAME=$($BIN_DIR/detect $BUILD_DIR) || exit 1
+
+MANAGE_FILE=$(cd $BUILD_DIR && find . -maxdepth 3 -type f -name 'manage.py' | head -1)
+MANAGE_FILE=${MANAGE_FILE:2}
 
 cat <<EOF
 ---
 config_vars:
-  PATH: /app/.heroku/venv/bin:/app/vendor/ffmpeg/bin:/bin:/usr/local/bin:/usr/bin
-  PYTHONUNBUFFERED: true
-  LIBRARY_PATH: /app/.heroku/vendor/lib
-  LD_LIBRARY_PATH: /app/.heroku/vendor/lib:/app/vendor/ffmpeg/lib
-  LANG: en_US.UTF-8
-  PYTHONHASHSEED: random
-  PYTHONHOME: /app/.heroku/venv/
-  PYTHONPATH: /app/
+  PATH:"/app/vendor/ffmpeg/bin"
+  LD_LIBRARY_PATH:"/app/vendor/ffmpeg/lib"
+
 EOF
 
 
-[ "$NAME" = "Python/Django" ] || exit 0
-
-MANAGE_FILE=$(cd $BUILD_DIR && find . -maxdepth 3 -type f -name 'manage.py' | head -1)
-MANAGE_FILE=${MANAGE_FILE:2}
-PROJECT=$(dirname $MANAGE_FILE)
-
+if [[ $MANAGE_FILE ]]; then
 cat <<EOF
 
 addons:
   shared-database:5mb
-
-default_process_types:
-  web:      python $PROJECT/manage.py runserver 0.0.0.0:\$PORT --noreload
 EOF
+fi

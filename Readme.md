@@ -16,7 +16,7 @@ Example usage:
     Initialized empty Git repository in /path/to/app/.git/
     $ heroku create --stack cedar --buildpack git://github.com/integricho/heroku-buildpack-python-ffmpeg-lame.git
     Creating random-app-name-1234... done, stack is cedar
-    BUILDPACK_URL=git://github.com/integricho/heroku-buildpack-python-ffmpeg.git
+    BUILDPACK_URL=git://github.com/integricho/heroku-buildpack-python-ffmpeg-lame.git
     http://random-app-name-1234.herokuapp.com/ | git@heroku.com:random-app-name-1234.git
     Git remote heroku added
     $ git add .
@@ -106,7 +106,7 @@ Example usage:
 
 You can also add it to upcoming builds of an existing application:
 
-    $ heroku config:add BUILDPACK_URL=git://github.com/integricho/heroku-buildpack-python-ffmpeg.git
+    $ heroku config:add BUILDPACK_URL=git://github.com/integricho/heroku-buildpack-python-ffmpeg-lame.git
 
 The buildpack will detect your app as Python if it has the file `requirements.txt` in the root. It will detect your app as Python/Django if there is an additional `settings.py` in a project subdirectory.
 

@@ -1,10 +1,7 @@
-Heroku buildpack: Python-ffmpeg
+Heroku buildpack: Python-ffmpeg-lame
 ========================
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for Python apps.
-The only difference from the clean Python buildpack is that this one includes ffmpeg. Currently
-it's not compiled at runtime of the compile script, but a pre-compiled version is simply cloned
-from [dzello's repo](https://github.com/dzello/ffmpeg-heroku), which was built on heroku also.
+This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for Python apps. The only difference from the clean Python buildpack is that this one includes ffmpeg with mp3 support. A pre-built version is simply cloned from [this repo](https://github.com/integricho/ffmpeg-lame-heroku.git), which was built on Heroku.
 
 It uses [virtualenv](http://www.virtualenv.org/) and [pip](http://www.pip-installer.org/).
 
@@ -17,7 +14,7 @@ Example usage:
     gunicorn.py.ini  Procfile  requirements.txt  wsgi.py
     $ git init
     Initialized empty Git repository in /path/to/app/.git/
-    $ heroku create --stack cedar --buildpack git://github.com/integricho/heroku-buildpack-python-ffmpeg.git
+    $ heroku create --stack cedar --buildpack git://github.com/integricho/heroku-buildpack-python-ffmpeg-lame.git
     Creating random-app-name-1234... done, stack is cedar
     BUILDPACK_URL=git://github.com/integricho/heroku-buildpack-python-ffmpeg.git
     http://random-app-name-1234.herokuapp.com/ | git@heroku.com:random-app-name-1234.git

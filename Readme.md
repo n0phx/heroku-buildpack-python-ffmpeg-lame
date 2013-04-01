@@ -88,16 +88,16 @@ Example usage:
     $ heroku run bash
     Running `bash` attached to terminal... up, run.1627
     ~ $ ffmpeg
-    ffmpeg version git-2012-11-15-62006b5 Copyright (c) 2000-2012 the FFmpeg developers
-      built on Nov 15 2012 09:35:53 with gcc 4.4.3 (Ubuntu 4.4.3-4ubuntu5)
-      configuration: --enable-shared --disable-asm --prefix=/app/vendor/ffmpeg
-      libavutil      52.  6.100 / 52.  6.100
-      libavcodec     54. 71.100 / 54. 71.100
-      libavformat    54. 36.100 / 54. 36.100
-      libavdevice    54.  3.100 / 54.  3.100
-      libavfilter     3. 23.100 /  3. 23.100
-      libswscale      2.  1.102 /  2.  1.102
-      libswresample   0. 16.100 /  0. 16.100
+    ffmpeg version git-2013-03-30-ee53777 Copyright (c) 2000-2013 the FFmpeg developers
+      built on Mar 31 2013 13:19:53 with gcc 4.4.3 (Ubuntu 4.4.3-4ubuntu5)
+      configuration: --enable-shared --disable-asm --enable-libmp3lame --prefix=/app/vendor/ffmpeg --extra-cflags=-I/app/vendor/lame/include --extra-ldflags=-L/app/vendor/lame/lib
+      libavutil      52. 23.100 / 52. 23.100
+      libavcodec     55.  2.100 / 55.  2.100
+      libavformat    55.  1.100 / 55.  1.100
+      libavdevice    55.  0.100 / 55.  0.100
+      libavfilter     3. 48.105 /  3. 48.105
+      libswscale      2.  2.100 /  2.  2.100
+      libswresample   0. 17.102 /  0. 17.102
     Hyper fast Audio and Video encoder
     usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
 

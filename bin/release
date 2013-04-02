@@ -11,7 +11,8 @@ cat <<EOF
 ---
 config_vars:
   PATH: "/usr/local/bin:/usr/bin:/bin:/app/vendor/ffmpeg/bin"
-  LD_LIBRARY_PATH: "/usr/local/lib:/usr/lib:/lib:/app/vendor/lame/lib:/app/vendor/ffmpeg/lib"
+  LD_LIBRARY_PATH: "/app/.heroku/vendor/lib:/usr/local/lib:/usr/lib:/lib:/app/vendor/lame/lib:/app/vendor/ffmpeg/lib"
+
 EOF
 
 

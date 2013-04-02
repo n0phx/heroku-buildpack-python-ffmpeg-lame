@@ -10,9 +10,8 @@ MANAGE_FILE=${MANAGE_FILE:2}
 cat <<EOF
 ---
 config_vars:
-  PATH:"/app/vendor/ffmpeg/bin"
-  LD_LIBRARY_PATH:"/app/vendor/ffmpeg/lib:/app/vendor/lame/lib"
-
+  PATH: "/usr/local/bin:/usr/bin:/bin:/app/vendor/ffmpeg/bin"
+  LD_LIBRARY_PATH: "/usr/local/lib:/usr/lib:/lib:/app/vendor/lame/lib:/app/vendor/ffmpeg/lib"
 EOF
 
 
